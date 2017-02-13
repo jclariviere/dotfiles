@@ -1,0 +1,22 @@
+[include]
+    path = .gitconfig.user
+[core]
+    autocrlf = true
+[push]
+    default = simple
+[alias]
+    st = status
+    graph = log --graph --oneline --decorate --date=relative --all
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[diff]
+    tool = mymeld
+[difftool "mymeld"]
+    cmd = meld.exe $LOCAL $REMOTE
+[merge]
+    tool = mymeld
+[mergetool "mymeld"]
+    cmd = meld.exe $LOCAL $BASE $REMOTE --output=$MERGED --auto-merge
+    trustExitCode = false

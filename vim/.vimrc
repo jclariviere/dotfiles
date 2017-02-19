@@ -22,9 +22,6 @@ try
     Plug 'scrooloose/nerdtree'
     nnoremap <C-n> :NERDTreeToggle<CR>
 
-    Plug 'ervandew/supertab'
-    let g:SuperTabDefaultCompletionType = "context"
-
     Plug 'tpope/vim-surround'
 
     Plug 'tpope/vim-unimpaired'

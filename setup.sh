@@ -7,8 +7,8 @@ ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 
 echo "Setting up vim"
 ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
 
 echo "Setting up tmux"
 ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf

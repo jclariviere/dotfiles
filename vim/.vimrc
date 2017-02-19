@@ -1,57 +1,52 @@
+set nocompatible   " Disable vi-compatibility
+
 " Plugins {{{
-set nocompatible   " Disable vi-compatibility. On top as required by Vundle
-filetype off       " Required by Vundle, will be enabled later
-
 try
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-    Plugin 'gmarik/Vundle.vim'
+    call plug#begin()
 
-    " ----- General -----
-    Plugin 'flazz/vim-colorschemes'
-    Plugin 'altercation/vim-colors-solarized'
+    Plug 'flazz/vim-colorschemes'
+    Plug 'altercation/vim-colors-solarized'
 
-    Plugin 'ciaranm/securemodelines'
+    Plug 'ciaranm/securemodelines'
 
-    Plugin 'mbbill/undotree'
+    Plug 'mbbill/undotree'
     nnoremap <leader>u :UndotreeToggle<CR>
     let g:undotree_SetFocusWhenToggle=1
     let g:undotree_WindowLayout=2
 
-    Plugin 'jmcantrell/vim-diffchanges'
+    Plug 'jmcantrell/vim-diffchanges'
     nnoremap <leader>d :DiffChangesDiffToggle<CR>
 
-    Plugin 'scrooloose/nerdcommenter'
+    Plug 'scrooloose/nerdcommenter'
 
-    Plugin 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdtree'
     nnoremap <C-n> :NERDTreeToggle<CR>
 
-    Plugin 'ervandew/supertab'
+    Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = "context"
 
-    Plugin 'tpope/vim-surround'
+    Plug 'tpope/vim-surround'
 
-    Plugin 'tpope/vim-unimpaired'
+    Plug 'tpope/vim-unimpaired'
 
-    Plugin 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive'
 
-    Plugin 'ntpeters/vim-better-whitespace'
+    Plug 'ntpeters/vim-better-whitespace'
 
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     let g:airline_left_sep = ''
     let g:airline_left_alt_sep = ''
     let g:airline_right_sep = ''
     let g:airline_right_alt_sep = ''
     set noshowmode   " Already shown by airline's status bar
 
-    " ----- Python -----
-    "Plugin 'davidhalter/jedi-vim'
-    "Plugin 'klen/python-mode'
+    " Other plugins
+    runtime! plugs/*.vim
 
-    call vundle#end()
+    call plug#end()
 
-    " Colorscheme. Must be set after vundle#end()
+    " Colorscheme. Must be set after plug#end()
     if has('gui_running')
         " Solarized is nice but requires some setup on the terminal emulator
         " side, so only use it in gvim
@@ -62,23 +57,23 @@ try
         colorscheme badwolf
     endif
 
-catch /E117:/ " E117: Unknown function: vundle#begin
-    echo "Vundle not installed. To install:"
-    echo "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
-    echo "vim +PluginInstall +qall (or :PluginInstall from inside vim)\n"
+catch /E117:/ " E117: Unknown function: plug#begin
+    echo "vim-plug not installed. To install:"
+    echo "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    echo "vim +PlugInstall +qall (or :PlugInstall from inside vim)\n"
 catch
     " All other exceptions, show the error message
     echo "Error in " . v:throwpoint
     echo v:exception
 endtry
-
-" Required by Vundle, but should be enabled even if Vundle is not installed
-filetype plugin indent on
 " }}}
 
 
 " General settings {{{
-syntax enable      " Syntax highlighting
+" Already set by plug#end() but set anyway in case vim-plug is not installed
+filetype plugin indent on " Enable filetype detection
+syntax enable " Syntax highlighting
+
 set showcmd        " Show (partial) command in status line
 set showmatch      " Show matching brackets
 set mouse=a        " Enable mouse usage (all modes)

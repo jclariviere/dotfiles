@@ -79,10 +79,11 @@ set number         " Display line numbers
 set laststatus=2   " Always show statusline
 set nomodeline     " Disable built-in modelines for security, use securemodelines plugin instead
 set wildmenu       " Visual autocomplete for command menu
+set wildmode=longest:full,full " Better autocomplete behavior
 set belloff=all    " Disable the annoying beep sounds
 set ttimeoutlen=50 " Lower timeout for key codes
 set diffopt+=vertical " Vertical split in diff mode
-set backspace=indent,eol,start	" More powerful backspacing
+set backspace=indent,eol,start " More powerful backspacing
 
 " Search
 set incsearch      " Incremental search
@@ -113,7 +114,7 @@ set switchbuf=useopen   " Consider open windows when using commands like :sb
 " Toggle paste mode
 set pastetoggle=<F3>
 
-" Make Y behave like D (synonym for y$ instead of yy)
+" Make Y behave like D and C (synonym for y$ instead of yy)
 nnoremap Y y$
 
 " Clear highlighting and redraw screen

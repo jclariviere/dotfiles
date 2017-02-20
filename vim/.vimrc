@@ -47,6 +47,7 @@ try
     if has('gui_running')
         " Solarized is nice but requires some setup on the terminal emulator
         " side, so only use it in gvim
+        let g:solarized_italic=0
         set background=dark
         colorscheme solarized
         call togglebg#map("<F5>") " Toggle between solarized light and dark

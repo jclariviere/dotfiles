@@ -30,13 +30,23 @@ try
 
     Plug 'ntpeters/vim-better-whitespace'
 
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    set noshowmode   " Already shown by airline's status bar
+    Plug 'itchyny/lightline.vim'
+    let g:lightline = {
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ],
+          \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+          \   'right': [ [ 'lineinfo' ],
+          \              [ 'percent' , 'lineposition' ],
+          \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+          \ },
+          \ 'component': {
+          \   'lineposition': "%{line('.') . '/' . line('$')}",
+          \ },
+          \ 'component_function': {
+          \   'gitbranch': 'fugitive#head'
+          \ },
+          \ }
+    set noshowmode   " Already shown by lightline's status bar
 
     " Other plugins
     runtime! plugs/*.vim

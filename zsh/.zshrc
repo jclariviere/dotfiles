@@ -42,6 +42,9 @@ alias copy-output="xclip -f -selection primary | xclip -f -selection clipboard"
 copy-file() {
     cat "$1" | xclip -f -selection primary | xclip -selection clipboard
 }
+
+# I usually use ".venv" as my python virtual env folder
+alias activate-venv="source .venv/bin/activate"
 # }}}
 
 # vim: foldmethod=marker

@@ -22,6 +22,8 @@ try
     Plug 'scrooloose/nerdtree'
     nnoremap <C-n> :NERDTreeToggle<CR>
 
+    Plug 'tpope/vim-eunuch'
+
     Plug 'tpope/vim-surround'
 
     Plug 'tpope/vim-unimpaired'

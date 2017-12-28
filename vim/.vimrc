@@ -17,10 +17,10 @@ try
     Plug 'jmcantrell/vim-diffchanges'
     nnoremap <leader>d :DiffChangesDiffToggle<CR>
 
-    Plug 'scrooloose/nerdcommenter'
-
     Plug 'scrooloose/nerdtree'
     nnoremap <C-n> :NERDTreeToggle<CR>
+
+    Plug 'tpope/vim-commentary'
 
     Plug 'tpope/vim-eunuch'
 

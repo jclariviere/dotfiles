@@ -30,6 +30,8 @@ try
 
     Plug 'tpope/vim-fugitive'
 
+    Plug 'tpope/vim-repeat'
+
     Plug 'ntpeters/vim-better-whitespace'
 
     Plug 'itchyny/lightline.vim'

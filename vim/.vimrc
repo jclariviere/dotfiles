@@ -111,6 +111,7 @@ set tabstop=4      " Number of space inserted when tab pressed
 set shiftwidth=4   " Number of space for indentation
 set smarttab       " See :help smarttab
 autocmd Filetype ruby setlocal ts=2 sw=2   " Ruby 2 spaces instead of 4
+autocmd Filetype yaml setlocal ts=2 sw=2   " yaml 2 spaces instead of 4
 
 " Folding
 set foldenable          " Enable folding

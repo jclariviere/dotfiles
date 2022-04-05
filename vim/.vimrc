@@ -66,6 +66,7 @@ try
         colorscheme solarized
         call togglebg#map("<F5>") " Toggle between solarized light and dark
     else
+        set t_Co=256
         colorscheme badwolf
     endif
 

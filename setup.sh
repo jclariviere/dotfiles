@@ -4,7 +4,7 @@ BoldRed="\033[1;31m"
 ColorReset="\033[0m"
 
 echo -e "${BoldRed}Setting up zsh${ColorReset}"
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone git@github.com:ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 chsh -s /bin/zsh
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 
